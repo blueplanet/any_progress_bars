@@ -13,6 +13,8 @@ nav.navbar.navbar-default.navbar-fixed-top
           a href='#' Home
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
+          li
+            = button_to '新しいプログレースバー', '#', class: 'navbar-btn btn btn-success'
           li.dropdown
             = link_to '#', 'data-toggle': 'dropdown', id: 'user-menu', 'aria-haspopup': true, 'aria-expanded': false do
               = current_user.email
