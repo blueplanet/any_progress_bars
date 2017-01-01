@@ -1,0 +1,7 @@
+.page-header 新しいプログレースバー
+
+= bootstrap_form_for @progress_bar do |f|
+  = f.text_field :name
+  = f.number_field :total
+  = f.number_field :current
+  = f.submit class: 'btn btn-primary btn-lg'
