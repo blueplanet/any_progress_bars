@@ -1,4 +1,6 @@
 class ProgressBarsController < ApplicationController
+  before_action :set_progress_bar, only: %i(edit update)
+
   def index
     @progress_bars = current_user.progress_bars
   end
@@ -8,7 +10,6 @@ class ProgressBarsController < ApplicationController
   end
 
   def edit
-    @progress_bar = current_user.progress_bars.find params[:id]
   end
 
   def create
@@ -20,9 +21,21 @@ class ProgressBarsController < ApplicationController
     end
   end
 
+  def update
+    if @progress_bar.update(progress_bar_params)
+      redirect_to :progress_bars, notice: 'プログレースバーを更新しました。'
+    else
+      render :edit
+    end
+  end
+
   private
 
     def progress_bar_params
       params.require(:progress_bar).permit(:name, :total, :current)
+    end
+
+    def set_progress_bar
+      @progress_bar = current_user.progress_bars.find params[:id]
     end
 end
