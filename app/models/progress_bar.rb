@@ -5,7 +5,7 @@ class ProgressBar < ApplicationRecord
   validates :total, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
   validates :current, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  scope :notify_for(time), -> {
+  scope :notify_for, -> (time) {
     where.not(slack_url: nil).where(notify_time: time.to_s(:time))
   }
 
