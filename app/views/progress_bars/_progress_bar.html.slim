@@ -1,6 +1,9 @@
 .row
-  .col-md-4.col-xs-12
-    = progress_bar.name
-  .col-md-8.col-xs-12
+  .col-md-1.col-xs-4.text-center
+    .label.label-info = "#{progress_bar.current} / #{progress_bar.total}"
+  .col-md-4.col-xs-8
+    = link_to progress_bar.name, [:edit, progress_bar]
+  .col-md-7.col-xs-12
     .progress
       .progress-bar role='progressbar' aria-valuenow="#{progress_bar.current_text}" aria-valuemin="0" aria-valuemax="100" style="width: #{progress_bar.current_text}%;"
+        = progress_bar.current_text
