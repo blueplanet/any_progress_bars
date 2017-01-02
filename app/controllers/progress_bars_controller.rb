@@ -32,7 +32,7 @@ class ProgressBarsController < ApplicationController
   private
 
     def progress_bar_params
-      params.require(:progress_bar).permit(:name, :total, :current)
+      params.require(:progress_bar).permit(:name, :total, :current, :notify_time, :slack_url)
     end
 
     def set_progress_bar
