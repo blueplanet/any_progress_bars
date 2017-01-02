@@ -208,3 +208,5 @@ ja:
         name: 名称
         total: トータル値
         current: カレント値
+        notify_time: 通知時刻
+        slach_url: Slack Webhook URL
