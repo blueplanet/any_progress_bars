@@ -1,7 +1,17 @@
 = bootstrap_form_for progress_bar do |f|
   = f.text_field :name
-  = f.number_field :total
-  = f.number_field :current
+  = f.form_group do
+    .row
+      .col-md-2
+        = f.number_field :current
+      .col-md-2
+        = f.number_field :total
+  = f.form_group do
+    .row
+      .col-md-2
+        = f.time_field :notify_time
+      .col-md-10
+        = f.text_field :slack_url
   = f.form_group do
     .btn-group
       = f.submit class: 'btn btn-primary'
