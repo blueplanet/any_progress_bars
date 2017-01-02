@@ -23,5 +23,7 @@ module AnyProgressBars
       g.routing_specs false
       g.request_specs false
     end
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
   end
 end
