@@ -9,7 +9,7 @@
   = f.form_group do
     .row
       .col-md-2
-        = f.time_field :notify_time
+        = f.time_select :notify_time, minute_step: 10
       .col-md-10
         = f.text_field :slack_url
   = f.form_group do

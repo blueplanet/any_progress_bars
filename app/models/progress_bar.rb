@@ -6,7 +6,8 @@ class ProgressBar < ApplicationRecord
   validates :current, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   scope :notify_for, -> (time) {
-    where.not(slack_url: nil).where(notify_time: time.to_s(:time))
+    time_cond = time.to_s(:time)[0, 4] + '0' # 10分単位に切り捨て
+    where.not(slack_url: nil).where(notify_time: time_cond)
   }
 
   def current_text
