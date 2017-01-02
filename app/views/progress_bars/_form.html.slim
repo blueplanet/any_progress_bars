@@ -1,0 +1,8 @@
+= bootstrap_form_for progress_bar do |f|
+  = f.text_field :name
+  = f.number_field :total
+  = f.number_field :current
+  = f.form_group do
+    .btn-group
+      = f.submit class: 'btn btn-primary'
+      = link_to 'キャンセル', :progress_bars, class: 'btn btn-default'

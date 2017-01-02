@@ -7,6 +7,10 @@ class ProgressBarsController < ApplicationController
     @progress_bar = current_user.progress_bars.build
   end
 
+  def edit
+    @progress_bar = current_user.progress_bars.find params[:id]
+  end
+
   def create
     @progress_bar = current_user.progress_bars.build progress_bar_params
     if @progress_bar.save
