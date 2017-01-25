@@ -2,8 +2,7 @@
   .col-md-1.col-xs-4.text-center
     .label.label-info = "#{progress_bar.current} / #{progress_bar.total}"
   .col-md-1.col-xs-2
-    = link_to [:up, progress_bar], class: 'btn btn-success', method: :post do
-      = 
+    = link_to 'Up', [:up, progress_bar], class: 'btn btn-success', method: :post
   .col-md-4.col-xs-6
     = link_to progress_bar.name, [:edit, progress_bar]
   .col-md-7.col-xs-12
