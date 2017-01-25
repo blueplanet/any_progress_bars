@@ -31,8 +31,6 @@ class ProgressBarsController < ApplicationController
 
   def up
     @progress_bar.increment :current
-
-    render ''
   end
 
   private
