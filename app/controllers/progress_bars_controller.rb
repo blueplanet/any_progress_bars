@@ -1,5 +1,5 @@
 class ProgressBarsController < ApplicationController
-  before_action :set_progress_bar, only: %i(edit update)
+  before_action :set_progress_bar, only: %i(edit update up)
 
   def index
     @progress_bars = current_user.progress_bars
@@ -27,6 +27,10 @@ class ProgressBarsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def up
+    @progress_bar.increment :current
   end
 
   private
